@@ -4,7 +4,7 @@
 describe('`Map.prototype.get` returns the element from the map for a key', function(){
 
   it('`get(key)` returns the value stored for this key', function() {
-    let map = new Map();
+    const map = new Map();
     map.set('key', 'value');
 
     const value = map.get('key');
@@ -15,12 +15,12 @@ describe('`Map.prototype.get` returns the element from the map for a key', funct
     let map = new Map();
     map.set('value', 'value');
 
-    var value = map.get(map.get(map.get('value')));
+    const value = map.get(map.get(map.get('value')));
     assert.equal(value, 'value');
   });
 
   it('requires exactly the value as passed to `set()`', function() {
-    let map = new Map();
+    const map = new Map();
     const obj = {};
     map.set(obj, 'object is key');
 
@@ -28,7 +28,7 @@ describe('`Map.prototype.get` returns the element from the map for a key', funct
   });
 
   it('leave out the key, and you get the value set for the key `undefined` (void 0)', function() {
-    let map = new Map();
+    const map = new Map();
     map.set(void 0, 'yo');
 
     const value = map.get(void 0);
@@ -36,7 +36,7 @@ describe('`Map.prototype.get` returns the element from the map for a key', funct
   });
 
   it('returns undefined for an unknown key', function() {
-    let map = new Map();
+    const map = new Map();
     const value = map.get();
     assert.equal(value, void 0);
   });
